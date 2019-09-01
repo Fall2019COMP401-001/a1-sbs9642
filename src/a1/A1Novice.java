@@ -8,14 +8,15 @@ public class A1Novice {
 		
 		Scanner scan = new Scanner(System.in);
 
-		// create final array (string)
-		String output = new String("");
 		
 		// initialize customer count
 		int customerCount = scan.nextInt();
 		
 		// for loop to separate customers by customer count
 		for (int i=0; i<customerCount; i++) {
+			// create output variable
+			String output = new String("");
+
 			// scan for first name and add first initial to output
 			String firstN = scan.next();
 			output += firstN.substring(0, 1) + ". ";
@@ -34,12 +35,12 @@ public class A1Novice {
 				scan.next();
 				// multiply quantity by price and add to customer total
 				total += quantityCount * scan.nextDouble();
+				output += total;
+				System.out.print(output);
+
 			}
-			// add total to output
-			output += total + " ";
 		}
 		// rinse and repeat
 		scan.close();		
-		System.out.println(output);
 	}
 }
