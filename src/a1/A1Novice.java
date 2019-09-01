@@ -8,7 +8,38 @@ public class A1Novice {
 		
 		Scanner scan = new Scanner(System.in);
 
-		// Your code follows here.
+		// create final array (string)
+		String output = new String("");
 		
+		// initialize customer count
+		int customerCount = scan.nextInt();
+		
+		// for loop to separate customers by customer count
+		for (int i=0; i<customerCount; i++) {
+			// scan for first name and add first initial to output
+			String firstN = scan.next();
+			output += firstN.substring(0, 1) + ". ";
+			// scan for last name and add to output
+			output += scan.next() + " ";
+			
+			// scan for item count (new with each loop)
+			int itemCount = scan.nextInt();
+			// create customer total
+			double total = 0.0;
+			// for loop through item list
+			for (int j=0; j<itemCount; j++) {
+				// create new count for item quantity
+				double quantityCount = scan.nextInt();
+				// scan over item name to ignore
+				scan.next();
+				// multiply quantity by price and add to customer total
+				total += quantityCount * scan.nextDouble();
+			}
+			// add total to output
+			output += total + " ";
+		}
+		// rinse and repeat
+		scan.close();		
+		System.out.println(output);
 	}
 }
