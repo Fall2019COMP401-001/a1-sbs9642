@@ -19,7 +19,7 @@ public class A1Jedi {
 		for (int i=0; i<totalItemCount; i++) {
 			itemNames[i] = scan.next();
 			scan.nextDouble(); // don't need item prices
-		}   // product index ^^^
+		}   // product index ^^^ 
 		
 		
 		
