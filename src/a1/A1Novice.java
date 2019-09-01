@@ -7,6 +7,9 @@ public class A1Novice {
 	public static void main(String[] args) {
 		
 		Scanner scan = new Scanner(System.in);
+		
+		//create final output
+		String output = new String("");
 
 		
 		// initialize customer count
@@ -15,13 +18,11 @@ public class A1Novice {
 		// for loop to separate customers by customer count
 		for (int i=0; i<customerCount; i++) {
 			// create output variable
-			String output = new String("");
 
 			// scan for first name and add first initial to output
 			String firstN = scan.next();
-			output += firstN.substring(0, 1) + ". ";
 			// scan for last name and add to output
-			output += scan.next() + " ";
+			String lastN = scan.next();
 			
 			// scan for item count (new with each loop)
 			int itemCount = scan.nextInt();
@@ -34,11 +35,12 @@ public class A1Novice {
 				// scan over item name to ignore
 				scan.next();
 				// multiply quantity by price and add to customer total
-				total += quantityCount * scan.nextDouble();
-				output += total;
-				System.out.print(output);
-
+				total += (quantityCount * scan.nextDouble());
 			}
+			String totalString = String.format("%.2f", total);
+			output += totalString;
+			System.out.println(firstN.substring(0, 1) + ". " + lastN + ": "+ totalString);
+
 		}
 		// rinse and repeat
 		scan.close();		
