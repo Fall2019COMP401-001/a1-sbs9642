@@ -52,13 +52,13 @@ public class A1Adept {
 					// create new for loop to append item array and calculate item price
 					for (int k=0; k<totalItemCount; k++) {
 						if (itemName.equals(itemNames[k])) {
-							double x = ((double) itemCount * (double) itemPrices[k]);
+							double x = ( Double.valueOf(itemCount) * itemPrices[k]);
 							indivisualExpense += x;
 							totalExpense += x;
 							totalItemsPurchased += itemCount;
 						}
 					}
-					customerTotals[i] = indivisualExpense;
+					customerTotals[i] += indivisualExpense;
 				}
 			}
 			int biggestIndex = 0;
@@ -73,12 +73,11 @@ public class A1Adept {
 			}
 			scan.close();
 			
-			String totalString = String.format("%.2f", ((double) totalExpense) / ((double) totalItemsPurchased));		
 			
-			System.out.println("Biggest: " + customerNames[biggestIndex] + "( " + customerTotals[biggestIndex] + ")");
-			System.out.println("Smallest: " + customerNames[smallestIndex] + "( " + customerTotals[smallestIndex] + ")");
-			System.out.println("Average: " + totalString);
-			//System.out.println("");
+			System.out.println("Biggest: " + customerNames[biggestIndex] + " (" + String.format("%.2f", customerTotals[biggestIndex]) + ")");
+			System.out.println("Smallest: " + customerNames[smallestIndex] + " (" + String.format("%.2f", customerTotals[smallestIndex]) + ")");
+			System.out.println("Average: " + String.format("%.2f", ( totalExpense) / ( Double.valueOf(customerCount))));
+			//System.out.println(totalExpense + "    " + Double.valueOf(customerCount));
 			
 			
 	}
