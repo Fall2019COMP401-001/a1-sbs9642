@@ -51,7 +51,6 @@ public class A1Jedi {
 				}				
 			}
 		}
-		scan.close();
 		// now use itemsArray and a double for loop  
 		//to find out how many customers bought the item and the total items bought
 		for (int i=0; i<customerCount; i++) {
@@ -71,6 +70,7 @@ public class A1Jedi {
 				System.out.println(customersPerItem[i] + " customers bought " + totalItems[i] + " " + itemNames[i]);
 			}
 		}
+		scan.close();
 	}
 }
 
